@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import baseURL from '../../../config';
 
 import style from './Info.module.css';
 
@@ -33,7 +34,7 @@ function Info() {
             return;
         }
 
-        await axios.get("http://localhost:8080/products/" + codigo)
+        await axios.get(`${baseURL}/products/${codigo}`)
             .then((response) => {
                 //Atribuir a mensagem no state message
                 setData(response.data.product);

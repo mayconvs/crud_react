@@ -6,6 +6,8 @@ import { listaCategorias } from '../Cadastrar/Cadastrar';
 import $ from 'jquery';
 import 'jquery-mask-plugin';
 import Swal from 'sweetalert2';
+import baseURL from '../../../config';
+
 //import { formatarData } from '../Info/Info';
 
 
@@ -41,7 +43,7 @@ function Editar() {
             return;
         }
 
-        await axios.get("http://localhost:8080/products/" + codigo)
+        await axios.get(`${baseURL}/products/` + codigo)
             .then((response) => {
                 //Atribuir a mensagem no state message
                 console.log(response.data.product);
@@ -105,7 +107,7 @@ function Editar() {
                 'Content-Type': 'application/json'
             }
         };
-        await axios.put("http://localhost:8080/products", conteudo, headers)
+        await axios.put(`${baseURL}/products`, conteudo, headers)
             .then((response) => {
                 //Atribuir a mensagem no state message
                 console.log(response.data.product);

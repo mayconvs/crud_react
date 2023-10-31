@@ -3,6 +3,7 @@ import axios from 'axios';
 import $ from 'jquery';
 import 'jquery-mask-plugin';
 import Swal from 'sweetalert2';
+import baseURL from '../../../config';
 
 import style from './Cadastrar.module.css';
 
@@ -96,7 +97,7 @@ function Cadastrar() {
 
     conteudo.data = formatarData(conteudo.data);
     //Fazer a requisição para o servidor utilizando Axios. Indicando o método da requisição, o endereço, enviar os dados do formulário e o cabeçalho
-    await axios.post('http://localhost:8080/products', conteudo, headers)
+    await axios.post(`${baseURL}/products`, conteudo, headers)
       .then((response) => { // Acessa o then quando a API retornar o status 200
 
         //Atribuir a mensagem no state message

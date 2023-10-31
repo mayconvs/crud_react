@@ -7,13 +7,14 @@ import Swal from 'sweetalert2';
 import { servDelete } from '../services/servDelete';
 import ButtonDownloadCSV from './ButtonDownloadCSV/ButtonDownloadCSV';
 import axios from 'axios';
+import baseURL from '../../config';
 
 const MenuAcoes = ({ updatedSelected, getUsers, ativarTodos }) => {
+    
     /* console.log(updatedSelected); */
     const [selectAll, setSelectAll] = useState(false);
     const [message, setMessage] = useState("");
     const [page, setPage] = useState("");
-
     const deleteAllUsers = async () => {
 
         /* console.log(updatedSelected); */
@@ -38,6 +39,7 @@ const MenuAcoes = ({ updatedSelected, getUsers, ativarTodos }) => {
             /* console.log("Existe Ativo na lista: " + isAtivo); */
             const jsonData = JSON.stringify(arrayFiltrado);
             //Se existir, perguntar se o usuário deseja excluir mesmo assim
+            
             if (isAtivo) {
                 Swal.fire({
                     title: 'Cuidado!',
@@ -49,9 +51,9 @@ const MenuAcoes = ({ updatedSelected, getUsers, ativarTodos }) => {
                     denyButtonColor: 'var(--color-bg-button-danger)',
                     //cancelButtonColor: 'var(--color-gray)',
                 }).then(async (result) => {
-
+                    
                     if (result.isConfirmed) {
-                        const response = await servDelete(`http://localhost:8080/products/delete_multiple/${encodeURIComponent(jsonData)}`);
+                        const response = await servDelete(`${baseURL}/products/delete_multiple/${encodeURIComponent(jsonData)}`);
                         setMessage(response);
 
                         getUsers(1);
@@ -72,7 +74,7 @@ const MenuAcoes = ({ updatedSelected, getUsers, ativarTodos }) => {
                     //cancelButtonColor: 'var(--color-gray)',
                 }).then(async (result) => {
                     if (result.isConfirmed) {
-                        const response = await servDelete(`http://localhost:8080/products/delete_multiple/${encodeURIComponent(jsonData)}`);
+                        const response = await servDelete(`${baseURL}/products/delete_multiple/${encodeURIComponent(jsonData)}`);
                         setMessage(response);
                         getUsers(1);
                         //setLastPage(response.data.pagination.lastPage);
@@ -138,7 +140,7 @@ const MenuAcoes = ({ updatedSelected, getUsers, ativarTodos }) => {
                             }
                         };
                         try {
-                            const response = await axios.put(`http://localhost:8080/products/active_all_page`, arrayFiltrado, headers);
+                            const response = await axios.put(`${baseURL}/products/active_all_page`, arrayFiltrado, headers);
                             setMessage(response);
                             getUsers(1);
                             //setLastPage(response.data.pagination.lastPage);

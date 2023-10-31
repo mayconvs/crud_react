@@ -6,6 +6,8 @@ import { Link, useParams } from 'react-router-dom';
 import { servDelete } from '../../services/servDelete';
 import Swal from 'sweetalert2';
 import MenuAcoes from '../../components/MenuAcoes';
+import baseURL from '../../../config';
+
 
 const SearchPage = () => {
     const [data, setData] = useState([]);
@@ -46,8 +48,8 @@ const SearchPage = () => {
             descricao = '';
         }
         setPage(page);
-        console.log(`http://localhost:8080/search?page=${page}&descricao=${descricao}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`)
-        await axios.get(`http://localhost:8080/search?page=${page}&descricao=${descricao}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`)
+        console.log(`${baseURL}/search?page=${page}&descricao=${descricao}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`)
+        await axios.get(`${baseURL}/search?page=${page}&descricao=${descricao}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`)
             .then((response) => {
                 //Atribuir a mensagem no state message
                 setData(response.data.products)
@@ -92,7 +94,7 @@ const SearchPage = () => {
         }).then(async (result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                const response = await servDelete(`http://localhost:8080/products/${product.codigo}`);
+                const response = await servDelete(`${baseURL}/products/${product.codigo}`);
                 setMessage(response);
                 getProducts(page);
                 Swal.fire('Produto Deletado!', '', 'success');

@@ -5,6 +5,8 @@ import style from './Home.module.css';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import MenuAcoes from '../../components/MenuAcoes';
+import baseURL from '../../../config';
+
 
 const Home = () => {
 
@@ -44,7 +46,7 @@ const Home = () => {
         }
         setPage(page);
         //const url = "http://localhost:8080/products?page=" + page;
-        const url = `http://localhost:8080/products?page=${page}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`;
+        const url = `${baseURL}/products?page=${page}&sortColumn=${sortBy.column}&sortOrder=${sortBy.order}`;
         console.log(url)
         await axios.get(url)
             .then((response) => { // Acessa o then quando a API retornar status 200
@@ -100,7 +102,7 @@ const Home = () => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 try {
-                    const response = await axios.delete(`http://localhost:8080/product/${product.codigo}`)
+                    const response = await axios.delete(`${baseURL}/product/${product.codigo}`)
                     console.log(response.data.mensagem)
                     //setMessage(response.data.mensagem);
                     getUsers(page);

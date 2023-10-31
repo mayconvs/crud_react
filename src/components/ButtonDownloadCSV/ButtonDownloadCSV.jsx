@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
 import style from './ButtonDownloadCSV.module.css'
 import axios from 'axios';
+import baseURL from '../../../config';
+
 
 const ButtonDownloadCSV = () => {
   /* const conteudo =''; */
@@ -20,7 +22,7 @@ const ButtonDownloadCSV = () => {
   const handleBaixarCSV = useCallback(async () => {
     //const lista = axios.get('/produtos/csv');
     try {
-      const produtos = await axios.get(`http://localhost:8080/download_product_csv`);
+      const produtos = await axios.get(`${baseURL}/download_product_csv`);
       const lista = produtos.data.products;
       console.log(lista)
 
