@@ -1,0 +1,21 @@
+.container {
+  padding: 0rem 5rem;
+  height: 100vh;
+}
+
+a, a:visited {
+  color: var(--color-font-a);
+}
+
+
+a:hover {
+  color: var(--color-font-a-hover);
+}
+
+.infos {
+  background-color: var(--color-bg-card);
+  color: var(--color-font-h1);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 6px 6px 12px 6px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,139 @@
+:root {
+  --color-bg: #efeef3;
+  --color-bg-menu: #f8f8fa;
+  --color-font-menu: #4d485c;
+  --color-bg-menu-hover: #ecdef5;
+  --color-font-menu-hover: #ab58da;
+  --color-font-desatived: ;
+  --color-icon-desatived: #babbbd;
+  --color-bg-menu-active: #ab58da;
+  --color-font-menu-active: #eee1f5;
+  --color-bg-button-success: #17ab93;
+  --color-font-button-success: #fdfdfd;
+  --color-bg-button-danger: #fe5e5e;
+  --color-font-button-danger: #fdfdfd;
+  --color-bg-button-download: #37ab17;
+  --color-font-button-download: #fdfdfd;
+  
+  --color-font-h1: #454253;
+  --color-font-h2: #666273;
+  --color-bg-search: #e4e2f0;
+  --color-font-search: #4d485c;
+  --color-font-placeholder-search: #acacae;
+  --color-icon-search: #454255;
+  --color-font-a: #b05edc;
+  --color-font-a-hover: #bd43ff;
+  --color-bg-card: #fdfdfd;
+  --color-bg-table: #fdfdfd;
+  --color-font-thead: #454255;
+  --color-bg-thead: #fdfdfd;
+  --color-bg-table-hover: #666273;
+  --color-font-table-hover: #fdfdfd;
+  --color-bg-pagination: #fdfdfd;
+  --color-font-pagination: #ab58da;
+  --color-bg-pagination-hover: #ab58da;
+  --color-font-pagination-hover: #fdfdfd;
+  --color-bg-pagination-disabled: #ecebf3;
+  --color-font-pagination-disabled: #acacae;
+  --color-icon-preview: #57D994;
+  --color-icon-edit: #D9AB57;
+  --color-icon-delete: ##fe5e5e;
+  --color-bg-input: #fdfdfd;
+  --color-font-input: #454253;
+}
+
+html {
+  font-family: 'poppins', sans-serif;
+  font-size: 12px;
+  /* background: linear-gradient(hsl(360, 100%, 65%), hsl(235, 100%, 73%)); */
+  background-color: var(--color-bg);
+
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+
+}
+
+.error-msg {
+  /* color: #D8000C; */
+  color: var(--color-bg-button-danger);
+}
+
+.error-msg {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+/* button, input[type="submit"] {
+  height: 4rem;
+  margin: 1rem 0rem;
+  font-size: 1.5rem;
+  background: #270;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: 'poppins', sans-serif;
+  transition: color 0.4s, background 0.4s;
+}
+
+button:hover, input[type="submit"]:hover {
+  height: 4rem;
+  margin: 1rem 0rem;
+  font-size: 1.5rem;
+  background: #FFF;
+  color: #270;
+  border: 2px solid #270;
+
+} */
+
+p.msg {
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'poppins', sans-serif;
+}
+
+a,
+a:active,
+a.hover {
+  text-decoration: none;
+  /* Remove a decoração de texto (sublinhado padrão) */
+  color: inherit;
+  /* Herda a cor do texto do elemento pai */
+  cursor: pointer;
+  background-color: inherit;
+  background: inherit;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-font-menu);
+  border-radius: 1rem;
+}
+
+nav a:hover {
+  background-color: var(--color-bg-menu-hover);
+  color: var(--color-font-menu-hover);
+  text-decoration: none;
+  border-radius: 5rem;
+  height: 1rem;
+}
+
+nav a.active {
+  background-color: var(--color-bg-menu-active);
+  color: var(--color-font-menu-active);
+  border-radius: 5rem;
+  height: 1rem;
+}
+
+nav a.active:hover {
+  background-color: var(--color-bg-menu-active);
+  color: var(--color-font-menu-active);
+  font-size: 1.1rem;
+  
+}

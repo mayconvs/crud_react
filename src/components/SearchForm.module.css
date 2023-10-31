@@ -1,0 +1,78 @@
+.form_search {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+
+    border-radius: 1rem;
+    width: 100%
+}
+
+.column .in_but {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: var(--color-bg-search);
+}
+
+.column .in_but input {
+    margin: 0rem;
+}
+
+.column .in_but input {
+    border-radius: 0.5rem;
+    background-color: var(--color-bg-search);
+    color: var(--color-font-search);
+    height: 2rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-family: "poppins", sans-serif;
+}
+
+.column .in_but input::placeholder, .column input:-ms-input-placeholder {
+    color: var(--color-font-placeholder-search);
+  }
+
+.search {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: unset;
+    margin: 0rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.search span {
+    color: var(--color-icon-search);
+    transition: all 0.2s;
+}
+
+.search:hover span {
+    color: var(--color-bg-menu-active);
+    font-size: 2.3rem;
+
+}
+
+.search:hover {
+    border: none;
+    height: 50px;
+    margin: 0rem;
+    background-color: unset;
+}
+
+.column .in_but input:focus + button span {
+    color: var(--color-bg-menu-active);
+}

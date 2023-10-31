@@ -1,0 +1,20 @@
+.buttonExcluir {
+  height: 3rem;
+  width: 10rem;
+  margin: 1rem 0.5rem;
+  font-size: 1rem;
+  background: var(--color-bg-button-danger);
+  color: var(--color-font-button-danger);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: 'poppins', sans-serif;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.buttonExcluir:hover {
+  font-size: 1.1rem;
+}
